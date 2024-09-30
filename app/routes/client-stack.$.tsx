@@ -1,4 +1,4 @@
-import { ClientStack } from "../route-components/ClientStack.client";
+import { ClientStack } from "../modules/ClientStack.client";
 import { useFilePath } from "../routes-helpers/useFilePath";
 import { useIsClient } from "../routes-helpers/useIsClient";
 

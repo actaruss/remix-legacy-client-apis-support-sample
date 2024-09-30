@@ -1,4 +1,4 @@
-import { ServerStack } from "../route-components/ServerStack";
+import { ServerStack } from "../modules/ServerStack";
 
 export default function Module() {
   return <ServerStack />;

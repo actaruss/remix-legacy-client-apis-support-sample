@@ -1,4 +1,4 @@
-import { TanStackStack } from "../route-components/TanStackStack.client";
+import { TanStackStack } from "../modules/TanStackStack.client";
 import { useFilePath } from "../routes-helpers/useFilePath";
 import { useIsClient } from "../routes-helpers/useIsClient";
 
