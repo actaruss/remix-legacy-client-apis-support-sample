@@ -116,6 +116,7 @@ function handleBrowserRequest(
     let shellRendered = false;
     const nonce = loadContext?.cspNonce as any;
 
+    //* src: https://github.com/remix-run/remix/issues/183
     const { pipe, abort } = renderToPipeableStream(
       <NonceProvider value={nonce}>
         <RemixServer
