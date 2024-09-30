@@ -1,13 +1,13 @@
-import { TanStackRoute } from "../route-components/nested-client-router-4-tanstack.client";
+import { TanStackStack } from "../route-components/TanStackStack.client";
 import { useFilePath } from "../routes-helpers/useFilePath";
 import { useIsClient } from "../routes-helpers/useIsClient";
 
-export default function TanStackClientRouter3() {
+export default function Module() {
   const { isClient } = useIsClient();
   const { pathName } = useFilePath();
 
   return isClient ? (
-    <TanStackRoute pathName={pathName} />
+    <TanStackStack pathName={pathName} />
   ) : (
     <div>Loading client router Tanstack fallback...</div>
   );

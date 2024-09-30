@@ -1,9 +1,13 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { useFilePath } from "../routes-helpers/useFilePath";
 
-const Home = () => <h2>Home Page</h2>;
-const About = () => <h2>About Page</h2>;
-const Services = () => <h2>Services Page</h2>;
+const Home = () => <h2>Home</h2>;
+const About = () => (
+  <>
+    <h2>About</h2>
+    <p>This is pre rendered from the server</p>
+  </>
+);
 
 const Layout = () => {
   const { pathName } = useFilePath();
@@ -11,13 +15,14 @@ const Layout = () => {
   return (
     <div>
       <span>Path: {pathName}</span>
-
+      <h1 style={{ fontSize: "80px" }}>👨🏻‍🔧</h1>
+      <h1>On Server</h1>
       <Outlet />
     </div>
   );
 };
 
-function App() {
+export function ServerStack() {
   return (
     <Routes>
       {/* Single parent route that renders child routes */}
@@ -25,10 +30,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="services" element={<Services />} />
       </Route>
     </Routes>
   );
 }
-
-export default App;

@@ -10,6 +10,7 @@ import type { LinksFunction } from "@remix-run/node";
 
 import { useNonce } from "../providers/nonce";
 import appStylesHref from "./app.css?url";
+import { NavLabel } from "./components/NavLabel";
 import { NavLinkWrapper } from "./components/NavLinkWrapper";
 
 export const links: LinksFunction = () => [
@@ -43,34 +44,49 @@ export default function App() {
           <nav>
             <ul>
               <li>
-                <NavLinkWrapper to="hydrated-route-1">
-                  Nested router 1
-                </NavLinkWrapper>
+                <NavLabel>Client Stack</NavLabel>
+                <ul>
+                  <li>
+                    <NavLinkWrapper to="/client-stack/home">
+                      Home
+                    </NavLinkWrapper>
+                  </li>
+                  <li>
+                    <NavLinkWrapper to="/client-stack/services">
+                      Service
+                    </NavLinkWrapper>
+                  </li>
+                  <li>
+                    <NavLinkWrapper to="/client-stack/services-modal">
+                      Service Modal
+                    </NavLinkWrapper>
+                  </li>
+                </ul>
               </li>
+
               <li>
-                <NavLinkWrapper to="hydrated-route-2">
-                  Nested router 2
-                </NavLinkWrapper>
+                <NavLabel>Server Stack</NavLabel>
+                <ul>
+                  <li>
+                    <NavLinkWrapper to="/server-stack/home">
+                      Home
+                    </NavLinkWrapper>
+                  </li>
+                  <li>
+                    <NavLinkWrapper to="/server-stack/about">
+                      About
+                    </NavLinkWrapper>
+                  </li>
+                </ul>
               </li>
+
               <li>
-                <NavLinkWrapper to="hydrated-route-3">
-                  Nested HYDRATED router 1
-                </NavLinkWrapper>
-              </li>
-              <li>
-                <NavLinkWrapper to="prerender-stack-1">
-                  Nested HYDRATED router 2
-                </NavLinkWrapper>
-              </li>
-              <li>
-                <NavLinkWrapper to="prerender-stack-2">
-                  Nested HYDRATED with MODAL
-                </NavLinkWrapper>
-              </li>
-              <li>
-                <NavLinkWrapper to="tanstack-client-router">
-                  TanStack Nested HYDRATED
-                </NavLinkWrapper>
+                <NavLabel>TanStack module</NavLabel>
+                <ul>
+                  <li>
+                    <NavLinkWrapper to="tanstack-module">home</NavLinkWrapper>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>

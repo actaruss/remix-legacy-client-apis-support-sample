@@ -64,3 +64,5 @@ Make sure to deploy the output of `remix build`
 - https://devtools.tech/blog/how-to-fix-errors-like-referenceerror-window-is-not-defined-in-remix-powered-web-app-or-javascript-frameworks---rid---G0OTehUXo6QQCrfykSF3
 - https://sentry.io/answers/hydration-error-nextjs/
 - https://github.com/storybookjs/storybook/discussions/25519
+- https://www.npmjs.com/package/storybook-addon-react-router-v6/v/1.0.1
+- https://storybook.js.org/docs/writing-stories/args

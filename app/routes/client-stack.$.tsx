@@ -1,13 +1,13 @@
-import { NestedClientRouter3 } from "../route-components/nested-client-router-3.client";
+import { ClientStack } from "../route-components/ClientStack.client";
 import { useFilePath } from "../routes-helpers/useFilePath";
 import { useIsClient } from "../routes-helpers/useIsClient";
 
-export default function FallbackNestedClientRouter3() {
+export default function Module() {
   const { isClient } = useIsClient();
   const { pathName } = useFilePath();
 
   return isClient ? (
-    <NestedClientRouter3 pathName={pathName} />
+    <ClientStack pathName={pathName} />
   ) : (
     <div>Loading client router 3 fallback...</div>
   );

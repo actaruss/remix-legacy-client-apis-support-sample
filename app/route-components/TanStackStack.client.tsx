@@ -11,13 +11,15 @@ const Layout = ({ pathName }: { pathName: string }) => (
   <QueryClientProvider client={queryClient}>
     <div>
       <span>Path: {pathName}</span>
+      <h1 style={{ fontSize: "80px" }}> 🍒</h1>
+      <h1>Tanstack</h1>
 
       <Outlet />
     </div>
   </QueryClientProvider>
 );
 
-export function TanStackRoute({ pathName }: { pathName: string }) {
+export function TanStackStack({ pathName }: { pathName: string }) {
   return (
     <Routes>
       <Route path="/" element={<Layout pathName={pathName} />}>

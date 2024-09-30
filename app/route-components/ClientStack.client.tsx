@@ -7,20 +7,22 @@ const Layout = ({ pathName }: { pathName: string }) => {
   return (
     <div>
       <span>Path: {pathName}</span>
+      <h1 style={{ fontSize: "80px" }}>🌊</h1>
+      <h1>Hydrated On CLIENT !!! 💅</h1>
 
       <Outlet />
     </div>
   );
 };
 
-export function NestedClientRouter3({ pathName }: { pathName: string }) {
+export function ClientStack({ pathName }: { pathName: string }) {
   return (
     <Routes>
       <Route path="/" element={<Layout pathName={pathName} />}>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="services" element={<Services />} />
-        <Route path="services/modal" element={<Services showModal />} />
+        <Route path="services-modal" element={<Services showModal />} />
       </Route>
     </Routes>
   );
@@ -28,7 +30,7 @@ export function NestedClientRouter3({ pathName }: { pathName: string }) {
 
 const Home = () => (
   <>
-    <h2>Hydrated - Home Page --- 3</h2>
+    <h2>Home</h2>
     <p>
       window.location is defined 🥳 :{" "}
       <span style={{ color: "green" }}>{window.location.toString()}</span>
@@ -38,10 +40,10 @@ const Home = () => (
 
 const Services = ({ showModal: showModalProps }: { showModal?: boolean }) => {
   const [showModal, setShowModal] = useState(showModalProps);
-
+  console.log(showModal);
   return (
     <>
-      <h2>Hydrated - Services Page --- 3 ---- MODAL</h2>
+      <h2>Services MODAL</h2>
       <p>
         window.location is defined 🥳 :{" "}
         <span style={{ color: "green" }}>{window.location.toString()}</span>
