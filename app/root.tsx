@@ -1,12 +1,35 @@
 import {
-  Form,
   Links,
   Meta,
+  Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
 
+import type { LinksFunction } from "@remix-run/node";
+// existing imports
+
+import { useNonce } from "../providers/nonce";
+import appStylesHref from "./app.css?url";
+import { NavLinkWrapper } from "./components/NavLinkWrapper";
+import { routePaths } from "./constants/route-paths";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: appStylesHref },
+];
+
+export const loader = async () => {
+  const cspScriptNonce = crypto.randomUUID().toString();
+
+  const data = {
+    cspScriptNonce,
+  };
+  return data;
+};
+
 export default function App() {
+  const nonce = useNonce();
+
   return (
     <html lang="en">
       <head>
@@ -18,35 +41,50 @@ export default function App() {
       <body>
         <div id="sidebar">
           <h1>Remix Contacts</h1>
-          <div>
-            <Form id="search-form" role="search">
-              <input
-                id="q"
-                aria-label="Search contacts"
-                placeholder="Search"
-                type="search"
-                name="q"
-              />
-              <div id="search-spinner" aria-hidden hidden={true} />
-            </Form>
-            <Form method="post">
-              <button type="submit">New</button>
-            </Form>
-          </div>
+          <div id="search-form"></div>
           <nav>
             <ul>
               <li>
-                <a href={`/contacts/1`}>Your Name</a>
+                <NavLinkWrapper to={routePaths.nestedClientRouter1}>
+                  Nested router 1
+                </NavLinkWrapper>
               </li>
               <li>
-                <a href={`/contacts/2`}>Your Friend</a>
+                <NavLinkWrapper to={routePaths.nestedClientRouter2}>
+                  Nested router 2
+                </NavLinkWrapper>
+              </li>
+              <li>
+                <NavLinkWrapper to={routePaths.nestedHydratedClientRouter1}>
+                  Nested HYDRATED router 1
+                </NavLinkWrapper>
+              </li>
+              <li>
+                <NavLinkWrapper to={routePaths.nestedHydratedClientRouter2}>
+                  Nested HYDRATED router 2
+                </NavLinkWrapper>
+              </li>
+              <li>
+                <NavLinkWrapper to={routePaths.nestedHydratedClientRouter3}>
+                  Nested HYDRATED with MODAL
+                </NavLinkWrapper>
+              </li>
+              <li>
+                <NavLinkWrapper to={routePaths.tanStack}>
+                  TanStack Nested HYDRATED
+                </NavLinkWrapper>
               </li>
             </ul>
           </nav>
         </div>
 
+        <div id="detail">
+          <Outlet />
+        </div>
+
         <ScrollRestoration />
         <Scripts />
+        <Scripts nonce={nonce} />
       </body>
     </html>
   );

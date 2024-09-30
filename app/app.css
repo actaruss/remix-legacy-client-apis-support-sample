@@ -186,7 +186,6 @@ body {
   overflow: auto;
   padding-top: 1rem;
 }
-
 #sidebar nav a span {
   float: right;
   color: #eeb004;
@@ -194,12 +193,26 @@ body {
 #sidebar nav a.active span {
   color: inherit;
 }
+#sidebar nav .active i {
+  color: inherit;
+}
+#sidebar nav a.active {
+  background: hsl(224, 98%, 58%);
+  color: white;
+}
+
+li {
+  padding-top: 20px;
+}
+a.active {
+  background: hsl(224, 49%, 33%);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 i {
   color: #818181;
-}
-#sidebar nav .active i {
-  color: inherit;
 }
 
 #sidebar ul {
@@ -229,11 +242,6 @@ i {
 
 #sidebar nav a:hover {
   background: #e3e3e3;
-}
-
-#sidebar nav a.active {
-  background: hsl(224, 98%, 58%);
-  color: white;
 }
 
 #sidebar nav a.pending {

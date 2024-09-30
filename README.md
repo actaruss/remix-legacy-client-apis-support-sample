@@ -2,6 +2,16 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+# Welcome to Remix!
+
+- No suspense
+- Client hydration
+- Support legacy
+- Support browser history
+- Nested Thibault client router
+
+Micro-frontend POC done !
+
 ## Development
 
 From your terminal:
