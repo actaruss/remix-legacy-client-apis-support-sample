@@ -7,7 +7,6 @@ import {
 } from "@remix-run/react";
 
 import type { LinksFunction } from "@remix-run/node";
-// existing imports
 
 import { useNonce } from "../providers/nonce";
 import appStylesHref from "./app.css?url";

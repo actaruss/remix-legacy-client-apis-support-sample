@@ -1,6 +1,6 @@
 # Welcome to Remix!
 
-- [Remix Docs](https://remix.run/docs)
+- [Remix Docs](https://remix/docs)
 
 # Welcome to Remix!
 
@@ -17,23 +17,35 @@ Micro-frontend POC done !
 From your terminal:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
+
+## Preview locally
+
+From your terminal:
+
+```sh
+pnpm build
+```
+
+```sh
+pnpm start
+```
 
 ## Deployment
 
 First, build your app for production:
 
 ```sh
-npm run build
+pnpm build
 ```
 
 Then run the app in production mode:
 
 ```sh
-npm start
+pnpm start
 ```
 
 Now you'll need to pick a host to deploy it to.
