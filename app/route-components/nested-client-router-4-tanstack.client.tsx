@@ -4,10 +4,28 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import { Outlet, Route, Routes } from "react-router-dom";
-import { NavLinkWrapper } from "../components/NavLinkWrapper";
-import { routePaths } from "../constants/route-paths";
 
 const queryClient = new QueryClient();
+
+const Layout = ({ pathName }: { pathName: string }) => (
+  <QueryClientProvider client={queryClient}>
+    <div>
+      <span>Path: {pathName}</span>
+
+      <Outlet />
+    </div>
+  </QueryClientProvider>
+);
+
+export function TanStackRoute({ pathName }: { pathName: string }) {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout pathName={pathName} />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
+  );
+}
 
 const Home = () => {
   const { isPending, error, data } = useQuery({
@@ -16,7 +34,7 @@ const Home = () => {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve({ data: "This is mocked fetch data!" });
-        }, 5000);
+        }, 2000);
       }).then(() => {
         return fetch("https://api.github.com/repos/TanStack/query").then(
           (res) => res.json()
@@ -39,34 +57,3 @@ const Home = () => {
     </div>
   );
 };
-const pathName = routePaths.tanStack;
-
-const Layout = () => (
-  <div>
-    <nav>
-      <ul>
-        <li>
-          <NavLinkWrapper to={`${pathName}`}>
-            TanStack react query
-          </NavLinkWrapper>
-        </li>
-      </ul>
-    </nav>
-
-    {/* The Outlet renders the child route components */}
-    <Outlet />
-  </div>
-);
-
-export function TanStackRoute() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Routes>
-        {/* Single parent route that renders child routes */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
-    </QueryClientProvider>
-  );
-}

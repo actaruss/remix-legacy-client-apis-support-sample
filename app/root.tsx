@@ -11,7 +11,6 @@ import type { LinksFunction } from "@remix-run/node";
 import { useNonce } from "../providers/nonce";
 import appStylesHref from "./app.css?url";
 import { NavLinkWrapper } from "./components/NavLinkWrapper";
-import { routePaths } from "./constants/route-paths";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
@@ -44,32 +43,32 @@ export default function App() {
           <nav>
             <ul>
               <li>
-                <NavLinkWrapper to={routePaths.nestedClientRouter1}>
+                <NavLinkWrapper to="hydrated-route-1">
                   Nested router 1
                 </NavLinkWrapper>
               </li>
               <li>
-                <NavLinkWrapper to={routePaths.nestedClientRouter2}>
+                <NavLinkWrapper to="hydrated-route-2">
                   Nested router 2
                 </NavLinkWrapper>
               </li>
               <li>
-                <NavLinkWrapper to={routePaths.nestedHydratedClientRouter1}>
+                <NavLinkWrapper to="hydrated-route-3">
                   Nested HYDRATED router 1
                 </NavLinkWrapper>
               </li>
               <li>
-                <NavLinkWrapper to={routePaths.nestedHydratedClientRouter2}>
+                <NavLinkWrapper to="prerender-stack-1">
                   Nested HYDRATED router 2
                 </NavLinkWrapper>
               </li>
               <li>
-                <NavLinkWrapper to={routePaths.nestedHydratedClientRouter3}>
+                <NavLinkWrapper to="prerender-stack-2">
                   Nested HYDRATED with MODAL
                 </NavLinkWrapper>
               </li>
               <li>
-                <NavLinkWrapper to={routePaths.tanStack}>
+                <NavLinkWrapper to="tanstack-client-router">
                   TanStack Nested HYDRATED
                 </NavLinkWrapper>
               </li>
