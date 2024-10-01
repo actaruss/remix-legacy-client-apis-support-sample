@@ -39,7 +39,7 @@ const Home = () => (
 
 const Services = ({ showModal: showModalProps }: { showModal?: boolean }) => {
   const [showModal, setShowModal] = useState(showModalProps);
-  console.log(showModal);
+
   return (
     <>
       <h2>Services MODAL</h2>
