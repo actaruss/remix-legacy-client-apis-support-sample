@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { Outlet, Route, Routes } from "react-router-dom";
 import { ModalContent } from "../components/ModalContent";
 
+//* render it as server component
 const Layout = ({ pathName }: { pathName: string }) => {
   return (
     <div>
@@ -15,8 +16,10 @@ const Layout = ({ pathName }: { pathName: string }) => {
 };
 
 export function ClientStack({ pathName }: { pathName: string }) {
+  //* same perfs as one single component switch
   return (
     <Routes>
+      {/* //* Will even be more efficient if every routes under are lazy loaded */}
       <Route path="/" element={<Layout pathName={pathName} />}>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
@@ -27,6 +30,7 @@ export function ClientStack({ pathName }: { pathName: string }) {
   );
 }
 
+//* As lazy and check the perfs
 const Home = () => (
   <>
     <h2>Home</h2>
@@ -37,6 +41,7 @@ const Home = () => (
   </>
 );
 
+//* As lazy and check the perfs
 const Services = ({ showModal: showModalProps }: { showModal?: boolean }) => {
   const [showModal, setShowModal] = useState(showModalProps);
 

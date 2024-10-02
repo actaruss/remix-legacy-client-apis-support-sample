@@ -65,6 +65,27 @@ export default function App() {
               </li>
 
               <li>
+                <NavLabel>Switch Stack</NavLabel>
+                <ul>
+                  <li>
+                    <NavLinkWrapper to="/client-switch/?screen=home">
+                      Home
+                    </NavLinkWrapper>
+                  </li>
+                  <li>
+                    <NavLinkWrapper to="/client-switch/?screen=services">
+                      Service
+                    </NavLinkWrapper>
+                  </li>
+                  <li>
+                    <NavLinkWrapper to="/client-switch/?screen=services-modal">
+                      Service Modal
+                    </NavLinkWrapper>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
                 <NavLabel>Server Stack</NavLabel>
                 <ul>
                   <li>
