@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       !isStorybook &&
         remix({
+          ssr: false,
           ignoredRouteFiles: ["**/*.css"],
         }),
       tsconfigPaths(),

@@ -17,14 +17,14 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
 ];
 
-export const loader = async () => {
-  const cspScriptNonce = crypto.randomUUID().toString();
+// export const loader = async () => {
+//   const cspScriptNonce = crypto.randomUUID().toString();
 
-  const data = {
-    cspScriptNonce,
-  };
-  return data;
-};
+//   const data = {
+//     cspScriptNonce,
+//   };
+//   return data;
+// };
 
 export default function App() {
   const nonce = useNonce();
