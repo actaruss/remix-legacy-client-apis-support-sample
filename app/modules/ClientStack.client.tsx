@@ -2,13 +2,15 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ClientStackLayout } from "../components/ClientStackComponents/layouts/ClientStackLayout";
 
+/**
+ * We don't care about errors as this could be handled in a separated module with a different eslint
+ */
 const Home = lazy(
-  async () => await import("../components/ClientStackComponents/routes/Home")
+  () => import("../components/ClientStackComponents/routes/Home")
 );
 
 const Services = lazy(
-  async () =>
-    await import("../components/ClientStackComponents/routes/Services")
+  () => import("../components/ClientStackComponents/routes/Services")
 );
 
 //* render it as server component

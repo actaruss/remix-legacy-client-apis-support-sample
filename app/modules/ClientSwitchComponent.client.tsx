@@ -14,7 +14,7 @@ const Layout = ({
     <div>
       <span>Path: {pathName}</span>
       <h1 style={{ fontSize: "80px" }}>🌊</h1>
-      <h1>Hydrated On CLIENT !!! 💅</h1>
+      <h1>Switch !!! 🔁</h1>
       {children}
     </div>
   );

@@ -109,6 +109,15 @@ export default function App() {
                   </li>
                 </ul>
               </li>
+
+              <li>
+                <NavLabel>Pure Stack</NavLabel>
+                <ul>
+                  <li>
+                    <NavLinkWrapper to="pure-home">Home</NavLinkWrapper>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>
