@@ -1,13 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom";
+import { Home } from "../components/ServerStackComponents/routes/Home";
+import { Services } from "../components/ServerStackComponents/routes/Services";
 import { useFilePath } from "../routes-helpers/useFilePath";
-
-const Home = () => <h2>Home</h2>;
-const About = () => (
-  <>
-    <h2>About</h2>
-    <p>This is pre rendered from the server</p>
-  </>
-);
 
 const Layout = () => {
   const { pathName } = useFilePath();
@@ -29,7 +23,7 @@ export function ServerStack() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="about" element={<Services />} />
       </Route>
     </Routes>
   );
