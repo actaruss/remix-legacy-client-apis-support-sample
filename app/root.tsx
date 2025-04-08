@@ -10,8 +10,8 @@ import type { LinksFunction } from "@remix-run/node";
 
 import { useNonce } from "../providers/nonce";
 import appStylesHref from "./app.css?url";
+import { Li } from "./components/Li";
 import { NavLabel } from "./components/NavLabel";
-import { NavLinkWrapper } from "./components/NavLinkWrapper";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
@@ -44,78 +44,30 @@ export default function App() {
           <nav>
             <ul>
               <li>
-                <NavLabel>Client Stack</NavLabel>
+                <NavLabel>Hydration the real deal</NavLabel>
                 <ul>
-                  <li>
-                    <NavLinkWrapper to="/client-stack/home">
-                      Home
-                    </NavLinkWrapper>
-                  </li>
-                  <li>
-                    <NavLinkWrapper to="/client-stack/services">
-                      Service
-                    </NavLinkWrapper>
-                  </li>
-                  <li>
-                    <NavLinkWrapper to="/client-stack/services-modal">
-                      Service Modal
-                    </NavLinkWrapper>
-                  </li>
+                  <Li
+                    to="/client-side-hydration-1"
+                    label="Client side hydration 1"
+                  />
+                  <Li
+                    to="/client-side-hydration-2"
+                    label="Client side hydration 2"
+                  />
+                  <Li
+                    to="/client-side-hydration-3"
+                    label="Client side hydration 3"
+                  />
+                  <Li
+                    to="/client-side-hydration-3-modal"
+                    label="Client side hydration 3 Modal"
+                  />
                 </ul>
               </li>
-
-              <li>
-                <NavLabel>Switch Stack</NavLabel>
-                <ul>
-                  <li>
-                    <NavLinkWrapper to="/client-switch/?screen=home">
-                      Home
-                    </NavLinkWrapper>
-                  </li>
-                  <li>
-                    <NavLinkWrapper to="/client-switch/?screen=services">
-                      Service
-                    </NavLinkWrapper>
-                  </li>
-                  <li>
-                    <NavLinkWrapper to="/client-switch/?screen=services-modal">
-                      Service Modal
-                    </NavLinkWrapper>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <NavLabel>Server Stack</NavLabel>
-                <ul>
-                  <li>
-                    <NavLinkWrapper to="/server-stack/home">
-                      Home
-                    </NavLinkWrapper>
-                  </li>
-                  <li>
-                    <NavLinkWrapper to="/server-stack/about">
-                      About
-                    </NavLinkWrapper>
-                  </li>
-                </ul>
-              </li>
-
               <li>
                 <NavLabel>TanStack module</NavLabel>
                 <ul>
-                  <li>
-                    <NavLinkWrapper to="tanstack-module">home</NavLinkWrapper>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <NavLabel>Pure Stack</NavLabel>
-                <ul>
-                  <li>
-                    <NavLinkWrapper to="pure-home">Home</NavLinkWrapper>
-                  </li>
+                  <Li to="/tanstack-module" label="Home" />
                 </ul>
               </li>
             </ul>

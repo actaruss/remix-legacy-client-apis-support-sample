@@ -1,8 +1,8 @@
 import { fn } from "@storybook/test";
 import { useLocation } from "react-router-dom";
-import * as actual from "../routes-helpers/useFilePath";
+import * as actual from "../hooks/useFilePath";
 
-export * from "../routes-helpers/useFilePath";
+export * from "../hooks/useFilePath";
 
 export const getUserFromSession = fn(actual.useFilePath)
   .mockImplementation(() => {

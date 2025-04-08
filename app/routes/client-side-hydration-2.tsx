@@ -1,14 +1,14 @@
 import { useFilePath } from "../hooks/useFilePath";
 import { useIsClient } from "../hooks/useIsClient";
-import { TanStackStack } from "../screens/TanStackStack";
+import { ClientSideHydration2 } from "../screens/ClientSideHydration2";
 
 export default function Module() {
   const { isClient } = useIsClient();
   const { pathName } = useFilePath();
 
   return isClient ? (
-    <TanStackStack pathName={pathName} />
+    <ClientSideHydration2 pathName={pathName} />
   ) : (
-    <div>Loading client router Tanstack fallback...</div>
+    <div>{`Loading client router ${pathName} fallback...`}</div>
   );
 }
